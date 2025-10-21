@@ -1,0 +1,37 @@
+{
+  "name": "get-hub",
+  "version": "1.0.0",
+  "description": "A Node.js CLI tool for browsing and downloading packages from your GitHub repositories.",
+  "main": "bin/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohammad-Khiabani/Get-hub.git"
+  },
+  "keywords": [
+    "cli",
+    "github",
+    "nodejs",
+    "terminal",
+    "downloader"
+  ],
+  "author": "Mohammad Khiabani (https://github.com/Mohammad-Khiabani)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mohammad-Khiabani/Get-hub/issues"
+  },
+  "homepage": "https://github.com/Mohammad-Khiabani/Get-hub#readme",
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "chalk-animation": "^2.0.3",
+    "degit": "^2.8.4",
+    "figlet": "^1.9.3",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^12.10.0",
+    "yargs": "^18.0.0"
+  }
+}
