@@ -77,15 +77,16 @@ async function downloadPackage(repoData) {
 
     emitter
       .clone(`downloads/${repoData.value}`)
-      .then(() =>
+      .then(() => {
+        clearScreen();
         console.log(
           chalk.bgGreen(
             chalk.bold(
               "\n ✅ Repo cloned successfully! \n --Visit the downloads directory--"
             )
           )
-        )
-      )
+        );
+      })
       .catch(err => console.error("❌ Error:", err));
   }
 }
