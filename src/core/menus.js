@@ -17,12 +17,13 @@ import figletAsync from "../utils/figletAsync.js";
 import { repeatedChoices, welcomeText } from "../constants/messages.js";
 import {
   downloadPackage,
+  findGithubAccounts,
   repositories,
   showPackagesMenu
 } from "../services/github.js";
 import { boxedHandler } from "../services/ui.js";
 import { sleep } from "../utils/sleep.js";
-
+import { username } from "../constants/messages.js";
 // -------------------------------
 // ⚙️ Local Functions & Variables
 // -------------------------------
@@ -140,7 +141,12 @@ async function showMainMenu() {
       type: "list",
       name: "command",
       message: "Select the option you want...",
-      choices: ["About", "Show all packages", repeatedChoices[1]],
+      choices: [
+        "About",
+        "Search Account",
+        "Show my other packages",
+        repeatedChoices[1]
+      ],
       required: true
     }
   ]);
@@ -151,8 +157,11 @@ async function showMainMenu() {
     case "About":
       showAbout();
       break;
-    case "Show all packages":
-      await showPackagesMenu();
+    case "Search Account":
+      await findGithubAccounts();
+      break;
+    case "Show my other packages":
+      await showPackagesMenu(username);
       break;
     case "Exit":
       await exitProgram("Goodbye my friend");

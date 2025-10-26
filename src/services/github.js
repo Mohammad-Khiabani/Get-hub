@@ -12,7 +12,7 @@ import { boxedHandler } from "./ui.js";
 import { clearScreen } from "../utils/clearScreen.js";
 import { showMainMenu, showPackageDetails } from "../core/menus.js";
 import { exitProgram } from "../core/handlers.js";
-import { repeatedChoices, username } from "../constants/messages.js";
+import { repeatedChoices } from "../constants/messages.js";
 
 /**
  * Repository choice list exposed to menus.
@@ -41,7 +41,7 @@ let repositories = [...repeatedChoices];
  * if (ok) { console.log('repos loaded'); }
  */
 
-async function getrepositories() {
+async function getrepositories(username) {
   const boxedOptions = {
     title: chalk.whiteBright("Error"),
     titleAlignment: "center",
@@ -51,7 +51,7 @@ async function getrepositories() {
 
   try {
     const request = await fetch(
-      `https://api.github.com/users/${username}/repos`
+      `https://api.github.com/users/${username}/repos?per_page=100`
     );
 
     if (!request.ok) {
@@ -141,11 +141,11 @@ async function downloadPackage(repoData) {
  * @example
  * await showPackagesMenu();
  */
-async function showPackagesMenu() {
+async function showPackagesMenu(username) {
   clearScreen();
 
   repositories.splice(2, repositories.length - 1);
-  const connection = await getrepositories();
+  const connection = await getrepositories(username);
 
   if (connection) {
     const answer = await inquirer.prompt([
@@ -176,4 +176,25 @@ async function showPackagesMenu() {
   }
 }
 
-export { repositories, getrepositories, downloadPackage, showPackagesMenu };
+async function findGithubAccounts() {
+  clearScreen();
+  const answer = await inquirer.prompt([
+    {
+      type: "input",
+      name: "user",
+      message: "Enter the GitHub account you are looking for: ",
+      required: true
+    }
+  ]);
+
+  const username = answer.user;
+  showPackagesMenu(username);
+}
+
+export {
+  repositories,
+  getrepositories,
+  downloadPackage,
+  showPackagesMenu,
+  findGithubAccounts
+};
