@@ -1,6 +1,6 @@
 {
   "name": "@mohammad-khiabani/get-hub",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Node.js CLI tool for browsing and downloading packages from your GitHub repositories.",
   "main": "bin/app.js",
   "type": "module",
@@ -8,7 +8,7 @@
     "start": "node ./bin/app.js"
   },
   "bin": {
-  "get-hub": "./bin/app.js"
+    "get-hub": "./bin/app.js"
   },
   "repository": {
     "type": "git",
