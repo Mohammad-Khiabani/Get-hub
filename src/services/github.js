@@ -125,7 +125,7 @@ async function downloadPackage(repoData) {
     });
 
     emitter
-      .clone(`downloads/${repoData.value}`)
+      .clone(`downloads/${repoPath}`)
       .then(() => {
         clearScreen();
         console.log(
