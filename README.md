@@ -26,7 +26,16 @@ It’s a small step toward building more polished and developer‑friendly comma
 
 ---
 
-## 🛠️ Installation
+## 📦 Installation & Usage
+
+### Install Globally (Recommended)
+
+```bash
+npm install -g @mohammad-khiabani/get-hub
+# Run the CLI from anywhere
+get-hub
+```
+### 🛠 Manual Setup (from source)
 
 ```bash
 # Clone the project
