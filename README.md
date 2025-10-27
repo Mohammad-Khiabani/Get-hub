@@ -103,7 +103,6 @@ downloads/               # Where repositories get saved to local system
 ---
 
 ## 🔮 Roadmap
-## 🔮 Roadmap
 - [x] Allow entering any GitHub username to browse and download their repositories  
 - [x] Enable npm installation & global CLI access  
 - [ ] Add support for GitLab / Bitbucket  
