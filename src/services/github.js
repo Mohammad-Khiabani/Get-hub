@@ -11,8 +11,13 @@ import inquirer from "inquirer";
 import { boxedHandler } from "../ui/display.js";
 import { clearScreen } from "../utils/clearScreen.js";
 import { showMainMenu, showPackageDetails } from "../core/menus.js";
-import { exitProgram } from "../core/handlers.js";
+import {
+  errorHandler,
+  exitAndBackHandler,
+  exitProgram
+} from "../core/handlers.js";
 import { repeatedChoices } from "../constants/messages.js";
+import { inquirerHandler } from "../ui/prompts.js";
 
 /**
  * Repository choice list exposed to menus.
@@ -58,24 +63,33 @@ async function getrepositories(username) {
       const description = chalk.red.bold("Github Account not find!!");
       const boxed = boxedHandler(description, boxedOptions);
       console.log(boxed);
+
+      await errorHandler(
+        "Accont not found.Please select one of the options below."
+      );
+
+      return false;
+    } else {
+      const response = await request.json();
+
+      response.forEach(repo =>
+        repositories.push({
+          name: repo.name,
+          value: repo.name,
+          description: repo.description,
+          url: repo.html_url
+        })
+      );
+
+      return true;
     }
-    const response = await request.json();
-
-    response.forEach(repo =>
-      repositories.push({
-        name: repo.name,
-        value: repo.name,
-        description: repo.description,
-        url: repo.html_url
-      })
-    );
-
-    return true;
   } catch (err) {
     const description = chalk.red.bold("No internet connection :(");
     const boxed = boxedHandler(description, boxedOptions);
     console.log(boxed);
-
+    await errorHandler(
+      "Connetion Error.\n Please select one of the options below."
+    );
     return false;
   }
 }
@@ -98,6 +112,7 @@ async function downloadPackage(repoData) {
   clearScreen();
 
   const match = repoData.url.match(/github\.com\/([^\/]+\/[^\/]+)/);
+  console.log(match);
 
   console.log(chalk.green(chalk.bold("\n Installing package...")));
 
@@ -175,18 +190,22 @@ async function showPackagesMenu(username) {
 }
 
 async function findGithubAccounts() {
-  clearScreen();
-  const answer = await inquirer.prompt([
-    {
-      type: "input",
-      name: "user",
-      message: "Enter the GitHub account you are looking for: ",
-      required: true
-    }
-  ]);
+  try {
+    clearScreen();
+    const answer = await inquirer.prompt([
+      {
+        type: "input",
+        name: "user",
+        message: "Enter the GitHub account you are looking for: ",
+        required: true
+      }
+    ]);
 
-  const username = answer.user;
-  showPackagesMenu(username);
+    const username = answer.user;
+    showPackagesMenu(username);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 export {
