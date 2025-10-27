@@ -6,6 +6,8 @@ A stylish command‑line tool built with Node.js to browse and clone repositorie
 ---
 
 ## 🚀 Features
+
+### ✅ Version 1.0
 - 🎨 Clean, animated CLI interface using **chalk** and **figlet**
 - ⚡ Fast cloning via **degit**
 - 🧭 Interactive menu navigation with **inquirer**
@@ -13,6 +15,9 @@ A stylish command‑line tool built with Node.js to browse and clone repositorie
 - 🧹 Auto‑clears the terminal for a smooth UX
 - 💾 Downloads directly into the `/downloads` folder inside your project root
 
+### 🆕 Version 2.0
+- 🔍 Allow entering any GitHub username to browse and download their repositories
+- 📁 Automatically saves each repository inside a folder named after its GitHub account
 ---
 
 ## 💡 About This Project
@@ -69,24 +74,44 @@ Your chosen repository will be downloaded into the `/downloads` folder — clean
 
 ```
 bin/
- └── index.js           # Entry point (CLI startup)
+ └── index.js            # Entry point (CLI startup)
+
 src/
- ├── core/              # Startup, menu, and CLI flow
- ├── services/          # GitHub API & download logic
- ├── utils/             # Helpers (clearScreen, sleep, etc.)
- └── constants/         # Repeated texts, choices, configs
-downloads/              # Where repositories are downloaded
+ ├── core/               # Logic flow (startup, main menu, command handlers)
+ │    └── startup.js
+ │    └── mainMenu.js
+ │    └── commandHandler.js
+ ├── ui/                 # Everything related to user interaction
+ │    └── prompts.js     # Inquirer-based input (ask, select menus)
+ │    └── display.js     # Output formatting, boxed messages, colors, logs
+ │    └── ui.js          # UI DSL layer (ui.ask(), ui.menu(), ui.confirm())
+ ├── services/           # GitHub API calls, repo listing, download logic
+ │    └── githubService.js
+ │    └── downloadService.js
+ ├── utils/              # Small generic helpers (no UI, no API)
+ │    └── clearScreen.js
+ │    └── sleep.js
+ │    └── fileHelpers.js
+ └── constants/          # Static strings, config keys, reusable values
+      └── messages.js
+      └── choices.js
+
+downloads/               # Where repositories get saved to local system
+
 ```
 
 ---
 
 ## 🔮 Roadmap
+## 🔮 Roadmap
+- [x] Allow entering any GitHub username to browse and download their repositories  
+- [x] Enable npm installation & global CLI access  
 - [ ] Add support for GitLab / Bitbucket  
 - [ ] Add search by keyword  
 - [ ] Add dark/light CLI themes  
-- [ ] Add multi‑language support (EN / FA)  
-- [ ] Enable npm installation & global CLI access  
-- [ ] Allow entering any GitHub username to browse and download their repositories  
+- [ ] Add multi‑language support (EN / FA) 
+- [ ] Add pagination with a limit of 10 repositories per page  
+repositories  
 
 ---
 
