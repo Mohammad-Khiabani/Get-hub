@@ -11,6 +11,9 @@ import chalkAnimation from "chalk-animation";
 import { clearScreen } from "../utils/clearScreen.js";
 import figletAsync from "../utils/figletAsync.js";
 import { sleep } from "../utils/sleep.js";
+import { inquirerHandler } from "../ui/prompts.js";
+import { repeatedChoices } from "../constants/messages.js";
+import { findGithubAccounts } from "../services/github.js";
 
 // -------------------------------
 // ⚙️ Local Functions & Variables
@@ -82,4 +85,21 @@ async function exitAndBackHandler(value, repoData, backStage, defaultFunc) {
   }
 }
 
-export { exitProgram, exitAndBackHandler };
+async function errorHandler(message) {
+  try {
+    const answer = await inquirerHandler(
+      {
+        type: "list",
+        name: "command",
+        message
+      },
+      { choices: repeatedChoices }
+    );
+    const command = answer.command;
+    exitAndBackHandler(command, null, findGithubAccounts, () => {});
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export { exitProgram, exitAndBackHandler, errorHandler };
