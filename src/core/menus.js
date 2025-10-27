@@ -21,7 +21,7 @@ import {
   repositories,
   showPackagesMenu
 } from "../services/github.js";
-import { boxedHandler } from "../services/ui.js";
+import { boxedHandler } from "../ui/display.js";
 import { sleep } from "../utils/sleep.js";
 import { username } from "../constants/messages.js";
 // -------------------------------

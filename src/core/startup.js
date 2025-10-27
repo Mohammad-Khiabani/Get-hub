@@ -9,7 +9,7 @@ import chalkAnimation from "chalk-animation";
 // -------------------------------
 
 import figletAsync from "../utils/figletAsync.js";
-import { boxedHandler } from "../services/ui.js";
+import { boxedHandler } from "../ui/display.js";
 import { clearScreen } from "../utils/clearScreen.js";
 import { showMainMenu } from "./menus.js";
 import { sleep } from "../utils/sleep.js";

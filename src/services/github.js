@@ -8,7 +8,7 @@ import inquirer from "inquirer";
 // -------------------------------
 // 🧱 Internal Modules
 // -------------------------------
-import { boxedHandler } from "./ui.js";
+import { boxedHandler } from "../ui/display.js";
 import { clearScreen } from "../utils/clearScreen.js";
 import { showMainMenu, showPackageDetails } from "../core/menus.js";
 import { exitProgram } from "../core/handlers.js";
@@ -58,8 +58,6 @@ async function getrepositories(username) {
       const description = chalk.red.bold("Github Account not find!!");
       const boxed = boxedHandler(description, boxedOptions);
       console.log(boxed);
-
-      return false;
     }
     const response = await request.json();
 
