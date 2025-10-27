@@ -112,7 +112,6 @@ async function downloadPackage(repoData) {
   clearScreen();
 
   const match = repoData.url.match(/github\.com\/([^\/]+\/[^\/]+)/);
-  console.log(match);
 
   console.log(chalk.green(chalk.bold("\n Installing package...")));
 
