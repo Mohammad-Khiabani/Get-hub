@@ -27,7 +27,7 @@
 ---
 
 ## 📦 راهنمای نصب و استفاده
-
+> درحال حاضر پکیج Get-Hub روی NPM منتشر شده. میتونی با استفاده از کامند زیر اون رو به صورت global نصب کنی [![npm version](https://img.shields.io/npm/v/@mohammad-khiabani/get-hub)](https://www.npmjs.com/package/@mohammad-khiabani/get-hub)
 ### نصب سراسری (پیشنهادی)
 
 ```bash
@@ -35,6 +35,7 @@ npm install -g @mohammad-khiabani/get-hub
 # اجرای cli از هر محیط ترمینالی
 get-hub
 ```
+[مشاهده صفحه NPM](https://www.npmjs.com/package/@mohammad-khiabani/get-hub)
 ### 🛠 نصب دستی (از طریق سورس کد)
 
 ```bash
