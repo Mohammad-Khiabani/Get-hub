@@ -29,12 +29,15 @@ It’s a small step toward building more polished and developer‑friendly comma
 ## 📦 Installation & Usage
 
 ### Install Globally (Recommended)
+> Get-hub is published on NPM [![npm version](https://img.shields.io/npm/v/@mohammad-khiabani/get-hub)](https://www.npmjs.com/package/@mohammad-khiabani/get-hub) and can be installed globally using the following command:
 
 ```bash
 npm install -g @mohammad-khiabani/get-hub
 # Run the CLI from anywhere
 get-hub
 ```
+> [View Get-hub on NPM](https://www.npmjs.com/package/@mohammad-khiabani/get-hub) 
+
 ### 🛠 Manual Setup (from source)
 
 ```bash
