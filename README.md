@@ -139,5 +139,3 @@ This project is licensed under the [MIT License](./LICENSE).
 ---
 
 **Created by Mohammad Khiabani — exploring the beauty of simple, modular CLI design. ✨**
-# Get-hub
-A Node.js CLI tool for browsing and downloading packages from your GitHub repositories.
