@@ -5,7 +5,7 @@ A stylish command‑line tool built with Node.js to browse and clone repositorie
 
 ---
 
-## 🚀 Features
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Features
 
 ### ✅ Version 1.0
 - 🎨 Clean, animated CLI interface using **chalk** and **figlet**
@@ -73,7 +73,7 @@ Your chosen repository will be downloaded into the `/downloads` folder — clean
 
 ---
 
-## 🧠 Tech Stack
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Brain.png" alt="Brain" width="25" height="25" /> Tech Stack
 - **Node.js (ESM)**  
 - **Inquirer** – interactive CLI menus  
 - **Chalk / Chalk‑Animation** – colors and animations  
@@ -114,7 +114,7 @@ downloads/               # Where repositories get saved to local system
 
 ---
 
-## 🔮 Roadmap
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Crystal%20Ball.png" alt="Crystal Ball" width="25" height="25" /> Roadmap
 - [x] Allow entering any GitHub username to browse and download their repositories  
 - [x] Enable npm installation & global CLI access  
 - [ ] Add support for GitLab / Bitbucket  
@@ -126,7 +126,7 @@ repositories
 
 ---
 
-## 🤝 Contributing
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Folded%20Hands%20Light%20Skin%20Tone.png" alt="Folded Hands Light Skin Tone" width="25" height="25" /> Contributing
 Contributions are welcome!  
 Fork this repository, create a new branch, and submit a PR.  
 Ideas, bug fixes, or UI tweaks — everything helps.
